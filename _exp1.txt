@@ -1,0 +1,37 @@
+clean rows = 766
+=== 0. 現況（基準）===
+BASE 7 特徵（現況）                                        train=   9.447  test=  10.003  nfeat=7
+
+=== 1. 加特徵：季節細化 / 天氣 / 趨勢 ===
+BASE + temp30                                        train=   9.409  test=   9.912  nfeat=8
+BASE + rain7                                         train=   9.268  test=  10.293  nfeat=8
+BASE + temp30 + rain7                                train=   9.233  test=  10.205  nfeat=9
+BASE + sin_doy + cos_doy                             train=   9.444  test=   9.961  nfeat=9
+BASE + 日序季節（取代月季節）                                   train=   9.445  test=   9.964  nfeat=7
+BASE + year                                          train=   9.347  test=   9.794  nfeat=8
+BASE + 量平方項                                          train=   9.428  test=   9.912  nfeat=8
+BASE + 價平方項                                          train=   9.271  test=   9.929  nfeat=8
+
+=== 2. 對數目標變數 ===
+BASE, log(price) 為目標                                 train=  19.198  test=  21.276  nfeat=7
+BASE+temp30, log(price) 為目標                          train=  19.318  test=  21.261  nfeat=8
+
+=== 3. 梯度下降超參數 ===
+BASE alpha=0.05 iters=6000                           train=   9.447  test=  10.002  nfeat=7
+BASE alpha=0.1 iters=6000                            train=   9.447  test=  10.003  nfeat=7
+BASE alpha=0.2 iters=6000                            train=   9.447  test=  10.003  nfeat=7
+BASE alpha=0.3 iters=6000                            train=   9.447  test=  10.003  nfeat=7
+BASE alpha=0.5 iters=6000                            train=   9.447  test=  10.003  nfeat=7
+BASE alpha=0.1 iters=3000                            train=   9.447  test=  10.002  nfeat=7
+BASE alpha=0.1 iters=10000                           train=   9.447  test=  10.003  nfeat=7
+BASE alpha=0.1 iters=20000                           train=   9.447  test=  10.003  nfeat=7
+
+=== 4. 交互項變化：換掉/多加 ===
+BASE - logvol_x_prev                                 train=   9.555  test=  10.216  nfeat=6
+BASE - dlogvol_x_prev                                train=  11.540  test=  10.170  nfeat=6
+BASE - 兩個交互項                                         train=  11.563  test=  10.297  nfeat=5
+BASE + logvol_x_dlogvol                              train=   9.322  test=   9.904  nfeat=8
+BASE + prev_price_sq + logvol_sq                     train=   9.293  test=   9.869  nfeat=9
+
+=== 5. 樣本加權 / 移除極端？ ===
+（略，涉及改動訓練資料定義，先看上面結果）

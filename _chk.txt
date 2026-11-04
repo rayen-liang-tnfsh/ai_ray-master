@@ -1,0 +1,39 @@
+===== CELL 1 type=markdown chars=89 lines=4 =====
+FIRST: # 高麗菜估價
+LAST : 
+===== CELL 2 type=markdown chars=8 lines=2 =====
+FIRST: ## 1 資料
+LAST : 
+===== CELL 3 type=code chars=3738 lines=110 =====
+FIRST: # 1 資料：讀進來，整理成一張看得懂的表
+LAST : 
+===== CELL 4 type=markdown chars=9 lines=2 =====
+FIRST: ## 2 前處理
+LAST : 
+===== CELL 5 type=code chars=5071 lines=148 =====
+FIRST: # 2 前處理
+LAST : 
+===== CELL 6 type=markdown chars=8 lines=2 =====
+FIRST: ## 3 訓練
+LAST : 
+===== CELL 7 type=code chars=3811 lines=109 =====
+FIRST: # 3 訓練：梯度下降
+LAST : 
+===== CELL 8 type=code chars=806 lines=21 =====
+FIRST: SEASON = ["sin_m", "cos_m"]
+LAST : 
+===== CELL 9 type=code chars=1627 lines=37 =====
+FIRST: display(pd.DataFrame(
+LAST : 
+===== CELL 10 type=code chars=1353 lines=32 =====
+FIRST: # 拿資料裡最後一天當例子，跟實際價格對照。
+LAST : 
+===== CELL 11 type=code chars=284 lines=7 =====
+FIRST: display(pd.DataFrame(cv_table))
+LAST : 
+===== CELL 12 type=markdown chars=350 lines=11 =====
+FIRST: <div style="background:#fff6e0;border-left:6px solid #e09b00;padding:12px 16px;border-radius:4px;color:#1a1a1a;">
+LAST : 
+===== CELL 13 type=markdown chars=3852 lines=161 =====
+FIRST: ## 4 我的判斷
+LAST : 

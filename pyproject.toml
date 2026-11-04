@@ -1,0 +1,18 @@
+[project]
+name = "ai-ray-master"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-openai>=1.7.2",
+    "peas-agent-runtime",
+    "peas-agent-skills",
+    "peas-agent-tools",
+    "python-dotenv>=1.2.4",
+]
+
+[tool.uv.sources]
+peas-agent-tools = { git = "https://github.com/mz038197/peas-agent-tools.git" }
+peas-agent-runtime = { git = "https://github.com/mz038197/peas-agent-runtime.git" }
+peas-agent-skills = { git = "https://github.com/mz038197/peas-agent-skills.git" }

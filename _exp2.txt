@@ -1,0 +1,39 @@
+clean rows = 766
+=== A. 固定 seed=42（與筆記本同一組切分）===
+BASE（現況）                               train=   9.447  test=  10.003
++ temp30                               train=   9.409  test=   9.912
++ year                                 train=   9.347  test=   9.794
++ logvol_x_dlogvol                     train=   9.322  test=   9.904
++ prev_price_sq+logvol_sq              train=   9.277  test=   9.901
++ dlogvol_sq                           train=   9.440  test=   9.977
++ sin/cos_doy                          train=   9.444  test=   9.961
++ prev_minus_pm30                      train=   9.505  test=  10.106
++ logvol_minus_vm30                    train=   9.388  test=   9.766
++ dlogvol_minus_vm7                    train=   9.360  test=   9.860
++ prev_minus_pm30 + logvol_minus_vm30  train=   9.240  test=   9.711
+
+=== B. 20 組不同隨機切分（判斷是不是真的）===
+BASE（現況）                               平均= 11.030  中位= 11.031  最小=  7.714  最大= 13.305  贏BASE次數=0/20
++ temp30                               平均= 10.975  中位= 11.036  最小=  7.743  最大= 13.205  贏BASE次數=16/20
++ year                                 平均= 10.916  中位= 11.042  最小=  7.651  最大= 13.169  贏BASE次數=14/20
++ logvol_x_dlogvol                     平均= 11.124  中位= 11.009  最小=  7.721  最大= 13.648  贏BASE次數=11/20
++ prev_price_sq+logvol_sq              平均= 10.995  中位= 10.761  最小=  7.853  最大= 13.521  贏BASE次數=14/20
++ dlogvol_sq                           平均= 11.240  中位= 11.440  最小=  7.727  最大= 13.402  贏BASE次數=2/20
++ sin/cos_doy                          平均= 11.057  中位= 11.093  最小=  7.722  最大= 13.316  贏BASE次數=7/20
++ prev_minus_pm30                      平均= 11.160  中位= 11.285  最小=  7.749  最大= 13.514  贏BASE次數=0/20
++ logvol_minus_vm30                    平均= 10.953  中位= 10.832  最小=  7.699  最大= 13.262  贏BASE次數=16/20
++ dlogvol_minus_vm7                    平均= 10.923  中位= 10.890  最小=  7.814  最大= 13.100  贏BASE次數=14/20
++ prev_minus_pm30 + logvol_minus_vm30  平均= 10.828  中位= 10.996  最小=  7.624  最大= 13.363  贏BASE次數=16/20
+
+=== C. 相對基準的改善量（負=更好）===
+BASE（現況）                               平均改善= +0.000  標準誤= 0.000
++ temp30                               平均改善= -0.055  標準誤= 0.022
++ year                                 平均改善= -0.115  標準誤= 0.028
++ logvol_x_dlogvol                     平均改善= +0.093  標準誤= 0.095
++ prev_price_sq+logvol_sq              平均改善= -0.035  標準誤= 0.082
++ dlogvol_sq                           平均改善= +0.210  標準誤= 0.049
++ sin/cos_doy                          平均改善= +0.027  標準誤= 0.017
++ prev_minus_pm30                      平均改善= +0.130  標準誤= 0.026
++ logvol_minus_vm30                    平均改善= -0.078  標準誤= 0.041
++ dlogvol_minus_vm7                    平均改善= -0.107  標準誤= 0.039
++ prev_minus_pm30 + logvol_minus_vm30  平均改善= -0.202  標準誤= 0.056

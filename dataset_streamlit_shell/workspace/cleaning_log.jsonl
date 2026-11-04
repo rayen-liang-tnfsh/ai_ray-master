@@ -1,0 +1,11 @@
+{"created_at": "2026-10-21T14:51:21", "actor": "agent", "action": "normalize_sex", "columns": ["Sex"], "rows": 223, "note": "將 Sex 欄位的多種寫法（M/Male/male/man 等）統一收斂為 male／female 兩種值。"}
+{"created_at": "2026-10-21T14:52:14", "actor": "agent", "action": "normalize_embarked", "columns": ["Embarked"], "rows": 206, "note": "將 Embarked 欄位的全名與大小寫寫法統一收斂為 S／C／Q 三種代碼，空值維持不補。"}
+{"created_at": "2026-10-21T14:59:28", "actor": "agent", "action": "drop_duplicate_names", "columns": ["Name"], "rows": 2, "note": "以 Name 判斷重複，每組保留空值最少的一筆，刪除其餘重複列。"}
+{"created_at": "2026-10-21T15:03:13", "actor": "agent", "action": "rename_columns_to_zh_tw", "columns": ["乘客編號", "是否生還", "船票等級", "姓名", "性別", "年齡", "同船兄弟姊妹與配偶數", "同船父母與子女數", "船票號碼", "票價", "船艙編號", "登船港口"], "rows": 891, "note": "將 12 個英文欄位名稱改為繁體中文（乘客編號、是否生還、船票等級、姓名、性別、年齡、同船兄弟姊妹與配偶數、同船父母與子女數、船票號碼、票價、船艙編號、登船港口）。"}
+{"created_at": "2026-10-21T15:05:47", "actor": "agent", "action": "add_has_cabin_flag", "columns": ["是否有船艙"], "rows": 891, "note": "依船艙編號是否有值新增是否有船艙旗標欄位（1=有、0=無）。"}
+{"created_at": "2026-10-21T15:06:20", "actor": "agent", "action": "drop_cabin_number", "columns": ["船艙編號"], "rows": 891, "note": "刪除船艙編號欄位，艙位資訊已由是否有船艙保留。"}
+{"created_at": "2026-10-28T13:10:45", "actor": "agent", "action": "fill_missing_age_by_parch", "columns": ["年齡"], "rows": 20, "note": "以同船父母與子女數>0 族群的平均年齡 23.01 補齊 177 筆年齡缺值中符合條件者。"}
+{"created_at": "2026-10-28T13:14:57", "actor": "agent", "action": "fill_missing_age_by_pclass", "columns": ["年齡"], "rows": 157, "note": "依船票等級分組（1等38.15、2等29.88、3等25.03歲）補齊全部 157 筆年齡缺值。"}
+{"created_at": "2026-10-28T13:16:37", "actor": "agent", "action": "fill_missing_by_mode_median_unknown", "columns": ["登船港口", "票價", "船票號碼"], "rows": 14, "note": "登船港口以眾數 S 補 6 筆、票價以中位數 14.45 補 4 筆、船票號碼缺值以 UNKNOWN 標記 4 筆。"}
+{"created_at": "2026-10-28T13:29:19", "actor": "agent", "action": "one_hot_encode_sex", "columns": ["性別", "性別_female", "性別_male"], "rows": 891, "note": "將性別欄位 one-hot 編碼為 性別_female／性別_male 兩欄（0/1），並移除原始文字欄位。"}
+{"created_at": "2026-10-28T13:30:29", "actor": "agent", "action": "one_hot_encode_embarked", "columns": ["登船港口", "登船港口_S", "登船港口_C", "登船港口_Q"], "rows": 891, "note": "將登船港口欄位 one-hot 編碼為 S／C／Q 三欄（0/1），並移除原始文字欄位。"}
